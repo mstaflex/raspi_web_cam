@@ -1,4 +1,4 @@
 raspi_web_cam
 =============
 
-An project to stream images from Raspberries Cam to a webpage
+A project to stream images from Raspberrie's pi cam to a webpage.
