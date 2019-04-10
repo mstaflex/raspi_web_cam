@@ -117,7 +117,8 @@ def getPicThread():
             time.sleep(3.)
             raise
 
-thread.start_new_thread(getPicThread, ())
+t = threading.Thread(target=getPicThread)
+t.start()
 
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------
@@ -235,7 +236,7 @@ class CamHandler(BaseHandler):
             self.write("Content-type: image/jpeg\r\n")
             self.write("Content-length: %s\r\n" % len(result_photo))
             self.write("X-Timestamp: %f\r\n\r\n" % time.time())
-            self.write(str(result_photo))
+            self.write(result_photo)
             self.flush()
 
     def on_connection_close(self):
